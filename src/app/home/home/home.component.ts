@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  login? : string = "v1"
+ 
+
   constructor() { }
 
   ngOnInit(): void {
+    setTimeout(()=>{
+      this.login ="value 2"
+    }, 3000
+    )
   }
 
 }
