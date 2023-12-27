@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   login? : string = "v1"
- 
+  password? : string
 
   constructor() { }
 

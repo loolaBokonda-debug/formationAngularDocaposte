@@ -5,13 +5,13 @@
     <!--[ngModel] : binding unidirectionnel du ts vers le html-->
 
     <p>Login
-        <input [ngModel] = "login"  placeholder="login"/>
+        <input [(ngModel)] = "login"  placeholder="login"/>
         {{login}}
     </p>
         
     <p>Password
-        <input type="password" class="max-w-xs mr-4 input-feild" matInput placeholder="Password" />
-        
+        <input [(ngModel)]="password" type="password" class="max-w-xs mr-4 input-feild" matInput placeholder="Password" />
+        {{password}}
     </p>
 
 
