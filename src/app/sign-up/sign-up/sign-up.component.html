@@ -1,34 +1,29 @@
-<p>sign-up works!</p>
-<div class="container">
-  <label ><b>Login</b></label>
-  <input  type="text" [(ngModel)]="login" placeholder="Enter Username" required>
-  <div *ngIf="!validateLogin()">
-    Login not valid.
-  </div>
-  <br/>
-  <label ><b>Password</b></label>
-  <input  type="password" [(ngModel)]="password"  placeholder="Enter Password"  required>
-  <div *ngIf="!validatePassword()">
-    password not valid.
-  </div>
-  <br/>
-  <label ><b>Email</b></label>
-  <input  type="email" [(ngModel)]="email"  placeholder="Enter Email" required>
-  <div *ngIf="!validateEmail()">
-    Email not valid.
-  </div>
-  <br/>
-  <label ><b>Gender</b></label>
-  <input type="text" [(ngModel)]="gender"  placeholder="Enter gender" required>
-  <div *ngIf="!validateGender()">
-    Email not valid.
-  </div>
-  <br/>
-  <label ><b>Age</b></label>
-  <input type="number" [(ngModel)]="age"  placeholder="Enter age" name="age" required>
-  <div *ngIf="!validateAge()">
-    Email not valid.
-  </div>
-  <br/>
-  <button type="submit" onclick="Valider($event)" >OK</button>
+
+<div  [formGroup]="formUser">
+  <label for="login">Login: </label>
+  <input type="text" name="login" formControlName="login" />
+  <p *ngIf="formUser.get('login')?.touched && formUser.get('login')?.invalid" class="error-message">Invalid Value</p>
+  <br />
+  
+  <label for="password">Password: </label>
+  <input type="password" name="password" formControlName="password" />
+  <p *ngIf="formUser.get('password')?.touched && formUser.get('password')?.invalid" class="error-message">Invalid Value</p>
+  <br />
+  
+  <label for="email">Email: </label>
+  <input type="email" name="email" formControlName="email" />
+  <p *ngIf="formUser.get('email')?.touched && formUser.get('email')?.invalid" class="error-message">Invalid Value</p>
+  <br />
+  
+  <label for="gender">Gender: </label>
+  <input type="text" name="gender" formControlName="gender" />
+  <p *ngIf="formUser.get('gender')?.touched && formUser.get('gender')?.invalid" class="error-message">Invalid Value</p>
+  <br />
+  
+  <label for="age">Age: </label>
+  <input type="number" name="age" formControlName="age" />
+  <p *ngIf="formUser.get('age')?.touched && formUser.get('age')?.invalid" class="error-message">Invalid Value</p>
+  <br />
+  
+  <button [disabled]="formUser.invalid" (click)="submit()">ok</button>
 </div>

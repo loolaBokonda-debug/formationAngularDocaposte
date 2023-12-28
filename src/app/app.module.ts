@@ -8,6 +8,9 @@ import { HomeModule } from './home/home.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ChatListModule } from './chat-list/chat-list.module';
 import { ChatModule } from './chat/chat.module';
+import { AppServiceService } from './app-service.service';
+import { SignUpModule } from './sign-up/sign-up.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,9 +23,13 @@ import { ChatModule } from './chat/chat.module';
     FormsModule,
     ChatListModule,
     ChatModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    SignUpModule,
+    HttpClientModule
+
+    
   ],
-  providers: [],
+  providers: [AppServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
