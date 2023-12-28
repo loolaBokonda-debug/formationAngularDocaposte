@@ -1,28 +1,34 @@
-<div style="text-align: center;">
-    <span style="font-weight: bold;">Sign Up</span>
-
-
-    <p>Login
-        <input [(ngModel)] = "login" class="max-w-xs mr-4 input-feild" matInput placeholder="Login" />
-        {{login}}
-    </p>
-
-    <p>Password
-        <input [(ngModel)]="password" type="password" class="max-w-xs mr-4 input-feild" matInput placeholder="Password"  />
-        {{password}}
-    </p>
-
-    <p>Email
-        <input class="max-w-xs mr-4 input-feild" matInput placeholder="Email" />
-    </p>
-
-    <p>Gender
-        <input class="max-w-xs mr-4 input-feild" matInput placeholder="Gender" />
-    </p>
-
-    <p>Age
-        <input class="max-w-xs mr-4 input-feild" matInput placeholder="Age"  />
-    </p>
-
-    <button>OK</button>
+<p>sign-up works!</p>
+<div class="container">
+  <label ><b>Login</b></label>
+  <input  type="text" [(ngModel)]="login" placeholder="Enter Username" required>
+  <div *ngIf="!validateLogin()">
+    Login not valid.
+  </div>
+  <br/>
+  <label ><b>Password</b></label>
+  <input  type="password" [(ngModel)]="password"  placeholder="Enter Password"  required>
+  <div *ngIf="!validatePassword()">
+    password not valid.
+  </div>
+  <br/>
+  <label ><b>Email</b></label>
+  <input  type="email" [(ngModel)]="email"  placeholder="Enter Email" required>
+  <div *ngIf="!validateEmail()">
+    Email not valid.
+  </div>
+  <br/>
+  <label ><b>Gender</b></label>
+  <input type="text" [(ngModel)]="gender"  placeholder="Enter gender" required>
+  <div *ngIf="!validateGender()">
+    Email not valid.
+  </div>
+  <br/>
+  <label ><b>Age</b></label>
+  <input type="number" [(ngModel)]="age"  placeholder="Enter age" name="age" required>
+  <div *ngIf="!validateAge()">
+    Email not valid.
+  </div>
+  <br/>
+  <button type="submit" onclick="Valider($event)" >OK</button>
 </div>
