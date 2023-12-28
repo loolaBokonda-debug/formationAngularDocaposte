@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-message-form',
@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MessageFormComponent implements OnInit {
 
+  message?: string
+
+  @Output() sendEvent = new EventEmitter<string>()
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  send(){
+    this.sendEvent.emit(this.message)
   }
 
 }

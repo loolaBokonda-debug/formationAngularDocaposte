@@ -1,2 +1,6 @@
 <p>chat works!</p>
-<app-message-form></app-message-form>
+
+<app-message *ngFor="let msg of msgs"  [message]="msg.message" [createdAt]="msg.createdAt">  </app-message>
+<app-message-form (sendEvent)="send($event)" ></app-message-form>
+
+{{msgs|json}}

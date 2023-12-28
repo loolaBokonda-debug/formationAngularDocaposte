@@ -1,12 +1,12 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "cli": {
-    "analytics": "2bad3a82-81ef-418c-9628-d7123211a128"
+    "analytics": "2c738636-48ad-4baf-b5bd-f101d7885af2"
   },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "pocangular": {
+    "chatClient": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/pocangular",
+            "outputPath": "dist/chat-client",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -30,6 +30,7 @@
               "src/assets"
             ],
             "styles": [
+              "src/custom-theme.scss",
               "src/styles.css"
             ],
             "scripts": []
@@ -71,10 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "pocangular:build:production"
+              "browserTarget": "chatClient:build:production"
             },
             "development": {
-              "browserTarget": "pocangular:build:development"
+              "browserTarget": "chatClient:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -82,7 +83,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "pocangular:build"
+            "browserTarget": "chatClient:build"
           }
         },
         "test": {
@@ -105,5 +106,5 @@
       }
     }
   },
-  "defaultProject": "pocangular"
+  "defaultProject": "chatClient"
 }

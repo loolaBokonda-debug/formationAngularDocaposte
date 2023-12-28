@@ -1,20 +1,11 @@
-<div>
-    <!--style="text-align: center;"-->
-    <span style="font-weight: bold;">Home</span>
-    <!--[(ngModel)] : binding bidirectionnel-->
-    <!--[ngModel] : binding unidirectionnel du ts vers le html-->
+<p>home</p>
 
-    <p>Login
-        <input [(ngModel)] = "login"  placeholder="login"/>
-        {{login}}
-    </p>
-        
-    <p>Password
-        <input [(ngModel)]="password" type="password" class="max-w-xs mr-4 input-feild" matInput placeholder="Password" />
-        {{password}}
-    </p>
+<label>login</label>
+<input  [(ngModel)]="login"/>
 
+{{login}}
 
-    <button>OK</button>
-
-</div>
+<br>
+<label>password</label>
+<input/>
+<button   (click)="submit()">OK</button>

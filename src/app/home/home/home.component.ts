@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { log } from 'console';
 
 @Component({
   selector: 'app-home',
@@ -7,17 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  login? : string = "v1"
-  password? : string = "jdjdjd"
+  login? : string  = "value 1"
 
   constructor() { }
 
   ngOnInit(): void {
+
     setTimeout(()=>{
-      this.login ="value 2"
-      this.login = "new password"
+      this.login = "value 2"
     }, 3000
+
     )
+  }
+
+  submit(){
+    console.log('login', this.login);
+    
   }
 
 }
