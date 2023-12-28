@@ -3,4 +3,6 @@
 <app-message *ngFor="let msg of msgs"  [message]="msg.message" [createdAt]="msg.createdAt">  </app-message>
 <app-message-form (sendEvent)="send($event)" ></app-message-form>
 
-{{msgs|json}}
+{{msgs|json}} 
+
+<!--Les pipes : |json-->
